@@ -1,16 +1,17 @@
 
-import { useEffect, useState } from "react";
-import Navber from "./component/layout/Navber";
+
 import { createBrowserRouter,RouterProvider,Route, Link,createRoutesFromElements } from "react-router-dom";
+import RootLayout from "./component/layout/RootLayout";
+let router =  createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+     
+    </Route>
+  )
+);
 function App() {
-let route =   createRoutesFromElements(
-  <Route path="/" element={<Navber/>}>
-  </Route>
-)
   
-  return (
-     <Navber/>
-  );
+  return  <RouterProvider router={router} />;
 }
 
 export default App;

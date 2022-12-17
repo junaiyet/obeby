@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function ListItem({itemname,className}) {
+function ListItem({itemname,className,href}) {
   return (
-    <li className={className}>{itemname}</li>
+    <li className={className}>
+      <Link to={href}>{itemname}</Link></li>
   )
 }
 
