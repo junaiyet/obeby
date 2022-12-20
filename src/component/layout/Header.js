@@ -10,22 +10,21 @@ import List from './List'
 import ListItem from './ListItem'
 import Search from './Search'
 function Header() {
-    let [show,setShow] = useState(false)
-    let [showtwo,setShowTwo] = useState(false)
-    let ref = useRef()
-    let reftwo = useRef()
+    let [categoryDropdownShow,setCategoryDropdownShow] = useState(false)
+    let [userDropdownShow,setUserDropdownShow] = useState(false)
+    let categoryRef = useRef()
+    let userRef = useRef()
     useEffect(()=>{
       document.body.addEventListener("click",(e)=>{
-        console.log(ref.current)
-        if(ref.current.contains(e.target)){
-          setShow(true)
+        if(categoryRef.current.contains(e.target)){
+          setCategoryDropdownShow(true)
         }else{
-          setShow(false)
+          setCategoryDropdownShow(false)
         }
-        if(reftwo.current.contains(e.target)){
-          setShowTwo(true)
+        if(userRef.current.contains(e.target)){
+          setUserDropdownShow(true)
         }else{
-          setShowTwo(false)
+          setUserDropdownShow(false)
         }
       })
     },[])
@@ -34,15 +33,15 @@ function Header() {
       <Container>
         <Flex className="flex justify-between ">
                 <div className= "flex items-center">
-                    <Dropdown className="relative"  dropref={ref}>
+                    <Dropdown className="relative"  dropref={categoryRef}>
                     <p className='flex items-center font-dm text-sm font-normal'><RiBarChartHorizontalLine/>  Shop by Category</p>
-                  {show && 
+                  {categoryDropdownShow && 
                     <List className="absolute top-8 w-[263px]  bg-primary text-[#767676] font-dm text-sm font-normal ">
-                        <ListItem className="py-4 px-5  hover:px-7  border border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300" itemname="Accesories"/>
-                        <ListItem className="py-4 px-5 hover:px-7  border border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Furniture"/>
-                        <ListItem className="py-4 px-5 hover:px-7  border border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Electronics"/>
-                        <ListItem className="py-4 px-5 hover:px-7  border border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Clothes"/>
-                        <ListItem className="py-4 px-5 hover:px-7  border border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Home appliances"/>
+                        <ListItem className="py-4 px-5  hover:px-7  border-b border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300" itemname="Accesories"/>
+                        <ListItem className="py-4 px-5 hover:px-7  border-b border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Furniture"/>
+                        <ListItem className="py-4 px-5 hover:px-7  border-b border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Electronics"/>
+                        <ListItem className="py-4 px-5 hover:px-7  border-b border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Clothes"/>
+                        <ListItem className="py-4 px-5 hover:px-7  border-b border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Home appliances"/>
                     </List>
                   }
                     </Dropdown>       
@@ -53,17 +52,15 @@ function Header() {
                   </div>
                 <div className= "flex items-center">
                   <Flex className="flex gap-x-10">
-                    <Dropdown className="relative" dropref={reftwo}>
+                    <Dropdown className="relative" dropref={userRef}>
                     <div className="">
                         <MdManageAccounts/>
                     </div>
-                    {showtwo && 
-                    <List className="absolute top-8 w-[263px]  bg-primary text-[#767676] font-dm text-sm font-normal ">
-                        <ListItem className="py-4 px-5  hover:px-7  border border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300" itemname="Accesories"/>
-                        <ListItem className="py-4 px-5 hover:px-7  border border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Furniture"/>
-                        <ListItem className="py-4 px-5 hover:px-7  border border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Electronics"/>
-                        <ListItem className="py-4 px-5 hover:px-7  border border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Clothes"/>
-                        <ListItem className="py-4 px-5 hover:px-7  border border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300 hover:font-bold" itemname="Home appliances"/>
+                    {userDropdownShow && 
+                    <List className="absolute top-8 right-0 w-[200px]  bg-white text-[#767676] font-dm text-sm font-normal text-center border border-solid border-[#f0f0f0]">
+                        <ListItem className="py-4 px-5    border-b border-solid border-[#f0f0f0] hover:text-[#ffff]
+                        hover:bg-primary cursor-pointer ease-in duration-300" itemname="My Account"/>
+                        <ListItem className="py-4 px-5   border-b border-solid border-[#f0f0f0] hover:text-[#ffff] hover:bg-primary cursor-pointer ease-in duration-300 hover:font-bold" itemname="Log Out"/>
                     </List>
                   }
                     </Dropdown>
