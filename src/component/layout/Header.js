@@ -43,7 +43,7 @@ function Header() {
         <Flex className="flex justify-between ">
                 <div className= "flex items-center">
                     <Dropdown className="relative"  dropref={categoryRef}>
-                    <p className='flex items-center font-dm text-sm font-normal'><RiBarChartHorizontalLine className='cursor-pointer mr-3'/>  Shop by Category</p>
+                    <p className='flex items-center font-dm text-sm font-normal'><RiBarChartHorizontalLine className='cursor-pointer mr-3'/> <span className='hidden lg:inline-block'> Shop by Category</span> </p>
                   {categoryDropdownShow && 
                     <List className="absolute top-8 w-[263px]  bg-primary text-[#767676] font-dm text-sm font-normal ">
                         <ListItem className="py-4 px-5  hover:px-7  border-b border-solid border-[#2d2d2d] hover:text-[#ffff] ease-in duration-300" itemname="Accesories"/>
@@ -55,8 +55,8 @@ function Header() {
                   }
                     </Dropdown>       
                </div>
-                <div className="w-[600px] relative">
-                  <Search className='w-full py-4 px-5 placeholder:text-[#c4c4c4] font-dm text-sm font-normal' placeholder='Search Products' />
+                <div className="w-auto lg:w-[600px] relative">
+                  <Search className='w-full  py-4 px-5 placeholder:text-[#c4c4c4] font-dm text-sm font-normal ' placeholder='Search Products' />
                   <AiOutlineSearch className='absolute right-4 top-4 cursor-pointer' />
                   </div>
                 <div className= "flex items-center">
