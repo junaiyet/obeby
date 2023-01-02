@@ -42,7 +42,7 @@ function Header() {
       <Container>
         <Flex className="flex justify-between ">
                 <div className= "flex items-center">
-                    <Dropdown className="relative"  dropref={categoryRef}>
+                    <Dropdown className="relative z-50"  dropref={categoryRef}>
                     <p className='flex items-center font-dm text-sm font-normal'><RiBarChartHorizontalLine className='cursor-pointer mr-3'/> <span className='hidden lg:inline-block'> Shop by Category</span> </p>
                   {categoryDropdownShow && 
                     <List className="absolute top-8 w-[263px]  bg-primary text-[#767676] font-dm text-sm font-normal ">
@@ -61,7 +61,7 @@ function Header() {
                   </div>
                 <div className= "flex items-center">
                   <Flex className="flex gap-x-10">
-                    <Dropdown className="relative" dropref={userRef}>
+                    <Dropdown className="relative z-50" dropref={userRef}>
                     <div className="">
                         <MdManageAccounts className='cursor-pointer'/>
                     </div>
@@ -74,7 +74,7 @@ function Header() {
                   }
                     </Dropdown>
                     <div className="">
-                        <Dropdown className="relative" dropref={cartRef}>
+                        <Dropdown className="relative z-50" dropref={cartRef}>
                         <BsCartFill className='cursor-pointer'/>
                     {cartDropdownShow && 
                     <div className="w-[360px] absolute top-8 right-0  border border-solid border-[#f0f0f0]">
@@ -93,7 +93,7 @@ function Header() {
                             </div>
                      </Flex>
                     </div>
-                     <div className="bg-white p-5">
+                     <div className="bg-white p-5" >
                        <h4 className='font-dm font-normal text-base text-[#765656]'>Subtotal  <strong className='text-primary'>$44.00</strong></h4>
                        <div className=" mt-3  ">
                        <Link  to="#" className='font-dm font-bold text-sm py-4 px-10 border border-solid border-primary inline-block'>View  Cart</Link>
