@@ -102,17 +102,17 @@ function Banner() {
         <Slider {...settings}>
           <Link to="#">
           <div >
-            <Image imgsrc="assets/banner.png" />
+            <Image className="block" imgsrc="assets/banner.png" />
           </div>
           </Link>
           <Link to="#">
           <div >
-            <Image imgsrc="assets/banner.png" />
+            <Image className="block" imgsrc="assets/banner.png" />
           </div>
           </Link>
           <Link to="#">
           <div >
-            <Image imgsrc="assets/banner.png" />
+            <Image className="block" imgsrc="assets/banner.png" />
           </div>
           </Link>
         </Slider>
