@@ -17,7 +17,7 @@ function Newarrival() {
                 <Product src="assets/p-1.png"  badge={false}/>
                </div>
                <div className="sm:max-w-[300px] md-max-lg:max-w-[345px] lg:max-w-[370px] ">
-                <Product src="assets/p-1.png"  badge={false}/>
+                <Product src="assets/p-1.png"  badge={true}/>
                </div>
                <div className="sm:max-w-[300px] md-max-lg:max-w-[345px] lg:max-w-[370px] ">
                 <Product src="assets/p-1.png"  badge={false}/>
