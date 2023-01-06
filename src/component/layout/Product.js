@@ -8,7 +8,7 @@ function Product({src,badge}) {
   return (
     <>
         <div className='relative overflow-y-hidden group cursor-pointer'>
-        <Image imgsrc={src}/>
+        <Image className="w-full" imgsrc={src}/>
         {badge && <Badge title="New"/>}
         <div className="h-40 bg-[#fff] absolute left-0 bottom-[-44%] lg:max-xl:bottom-[-85%] w-full py-5 px-7 group-hover:bottom-0 duration-300">
          <Flex className="flex gap-x-1 justify-end items-center">

@@ -100,7 +100,7 @@ const Footer = () => {
               />
             </List>
           </div>
-          <div className="flex sm:w-[30%] w-full justify-center">
+          <div className="flex sm:w-[30%] w-full sm:justify-center">
             <div>
               <h4 className="mb-4 font-dm text-base font-bold">
                 (052) 611-5711 <br /> company@domain.com
