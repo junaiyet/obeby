@@ -34,7 +34,11 @@ const SidebarContent = ({dropDown,dropTitle}) => {
           <LeftSidebarItem subDropDown={true} title="category 4" color="purple">
                 <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>sadfaslkhfdkjsahdiufhasklj</h4>
            </LeftSidebarItem>
-          <LeftSidebarItem subDropDown={true} title="category 5" color="black">
+          <LeftSidebarItem 
+          subDropDown={true}
+           title="category 5"
+            color="black">
+
                 <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>sadfaslkhfdkjsahdiufhasklj</h4>
            </LeftSidebarItem>
            
