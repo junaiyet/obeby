@@ -1,14 +1,15 @@
 import React from 'react'
 import SidebarContent from './SidebarContent'
+import { category,colors,brands, prices } from '../../data/data'
 
 const LeftSidebar = () => {
   return (
     <>
-    <SidebarContent dropDown={true} dropTitle="Shop by Category"/>
-    <SidebarContent dropDown={true} dropTitle="Shop by Color"/>
-    <SidebarContent dropDown={true} dropTitle="Shop by Brand"/>
-    <SidebarContent dropDown={true} dropTitle="Shop by Price"/>
-    
+    <SidebarContent dropDown={true} dropTitle="Shop by Category" data={category}/>
+    <SidebarContent dropDown={true} dropTitle="Shop by Color" data={brands}/>
+    {/* <SidebarContent dropDown={true} dropTitle="Shop by Brand" data={brands}/>
+    <SidebarContent dropDown={true} dropTitle="Shop by Price" data={prices}/>
+     */}
     </>
   )
 }

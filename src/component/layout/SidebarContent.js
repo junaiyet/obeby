@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import {GoTriangleDown} from 'react-icons/go'
+import { category } from '../../data/data'
 import Flex from './Flex'
 import LeftSidebarItem from './LeftSidebarItem'
-const SidebarContent = ({dropDown,dropTitle}) => {
+
+const SidebarContent = ({dropDown,dropTitle,data}) => {
     let [drop,setDrop] = useState(dropDown)
     let [show,setShow] = useState(dropDown)
+    console.log(data)
   return (
     <div className="mb-10">
         <div>
@@ -22,46 +25,30 @@ const SidebarContent = ({dropDown,dropTitle}) => {
         </div>
         {show && 
         <>
-            <LeftSidebarItem subDropDown={false} title="Category 1 " >
-                <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>fasdfa</h4>
-           </LeftSidebarItem>
-          <LeftSidebarItem subDropDown={true} title="category 2" color="green">
-                <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>sadfaslkhfdkjsahdiufhasklj</h4>
-           </LeftSidebarItem>
-          <LeftSidebarItem subDropDown={true} title="category 3" color="blue">
-                <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>sadfaslkhfdkjsahdiufhasklj</h4>
-           </LeftSidebarItem>
-          <LeftSidebarItem subDropDown={true} title="category 4" color="purple">
-                <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>sadfaslkhfdkjsahdiufhasklj</h4>
-           </LeftSidebarItem>
-          <LeftSidebarItem 
-          subDropDown={true}
-           title="category 5"
-            color="black">
+          {data.map((item)=>(
+            <LeftSidebarItem subDropDown={true} title={item.name} >
+                {item.subcategory.map((sitem)=>(
+                    <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>{sitem.name}</h4>
 
-                <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>sadfaslkhfdkjsahdiufhasklj</h4>
+                ))}
            </LeftSidebarItem>
+          ))}
+     
            
  
         </>
         }
         {drop == false && 
             <>
-                    <LeftSidebarItem subDropDown={false} title="Category 1 " >
-                <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>fasdfa</h4>
+                           {data.map((item)=>(
+            <LeftSidebarItem subDropDown={true} title={item.name} >
+                {item.subcategory.map((sitem)=>(
+                    <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>{sitem.name}</h4>
+
+                ))}
            </LeftSidebarItem>
-          <LeftSidebarItem subDropDown={true} title="category 2" color="green">
-                <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>sadfaslkhfdkjsahdiufhasklj</h4>
-           </LeftSidebarItem>
-          <LeftSidebarItem subDropDown={true} title="category 3" color="blue">
-                <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>sadfaslkhfdkjsahdiufhasklj</h4>
-           </LeftSidebarItem>
-          <LeftSidebarItem subDropDown={true} title="category 4" color="purple">
-                <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>sadfaslkhfdkjsahdiufhasklj</h4>
-           </LeftSidebarItem>
-          <LeftSidebarItem subDropDown={true} title="category 5" color="black">
-                <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>sadfaslkhfdkjsahdiufhasklj</h4>
-           </LeftSidebarItem>
+          ))}
+                  
  
         </>
         }
