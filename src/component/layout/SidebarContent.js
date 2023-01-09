@@ -25,28 +25,62 @@ const SidebarContent = ({dropDown,dropTitle,data}) => {
         </div>
         {show && 
         <>
-          {data.map((item)=>(
-            <LeftSidebarItem subDropDown={true} title={item.name} >
-                {item.subcategory.map((sitem)=>(
+        {data.map((item,index)=>(
+            item.subcategory ? (
+            <LeftSidebarItem subDropDown={item.subcategory?true:false} 
+            title={item.name} >
+              {item.subcategory && 
+                   item.subcategory.map((sitem)=>(
                     <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>{sitem.name}</h4>
 
                 ))}
            </LeftSidebarItem>
+
+            ):(
+
+            <LeftSidebarItem subDropDown={item.subcategory?true:false}
+             title={item.name}
+             color={item.code}
+             >
+              {item.subcategory && 
+                   item.subcategory.map((sitem)=>(
+                    <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>{sitem.name}</h4>
+
+                ))}
+           </LeftSidebarItem>
+            )
           ))}
-     
+                  
+ 
            
  
         </>
         }
         {drop == false && 
             <>
-                           {data.map((item)=>(
-            <LeftSidebarItem subDropDown={true} title={item.name} >
-                {item.subcategory.map((sitem)=>(
+          {data.map((item,index)=>(
+            item.subcategory ? (
+            <LeftSidebarItem subDropDown={item.subcategory?true:false} title={item.name} >
+              {item.subcategory && 
+                   item.subcategory.map((sitem)=>(
                     <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>{sitem.name}</h4>
 
                 ))}
            </LeftSidebarItem>
+
+            ):(
+
+            <LeftSidebarItem subDropDown={item.subcategory?true:false}
+             title={item.name}
+             color={item.code}
+             >
+              {item.subcategory && 
+                   item.subcategory.map((sitem)=>(
+                    <h4 className='font-dm font-normal text-base text-[#767676] cursor-pointer border-b border-solid border-[#F0F0F0] py-5'>{sitem.name}</h4>
+
+                ))}
+           </LeftSidebarItem>
+            )
           ))}
                   
  

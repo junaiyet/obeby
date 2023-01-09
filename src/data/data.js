@@ -86,19 +86,24 @@ let category = [
 ]
 let colors =[
     {
-        color:"red"
+        name:"red",
+        code:"red"
     },
     {
-        color:"green"
+        name:"green",
+          code:"green"
     },
     {
-        color:"blue"
+        name:"blue",
+          code:"blue"
     },
     {
-        color:"yellow"
+        name:"yellow",
+          code:"yellow"
     },
     {
-        color:"black"
+        name:"black",
+          code:"black"
     },
 ]
 let brands =[
@@ -120,19 +125,19 @@ let brands =[
 ]
 let prices =[
     {
-        range: "$0.00 - $9.99"
+        name: "$0.00 - $9.99"
     },
     {
-        range: "$10.00 - $19.99"
+        name: "$10.00 - $19.99"
     },
     {
-        range: "$20.00 - $29.99"
+        name: "$20.00 - $29.99"
     },
     {
-        range: "$30.00 - $39.99"
+        name: "$30.00 - $39.99"
     },
     {
-        range: "$40.00 - $69.99"
+        name: "$40.00 - $69.99"
     },
 ]
 export {category,colors,brands,prices}
