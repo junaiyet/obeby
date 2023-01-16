@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import {GoTriangleDown} from 'react-icons/go'
-import { category } from '../../data/data'
-import Flex from './Flex'
 import LeftSidebarItem from './LeftSidebarItem'
 
 const SidebarContent = ({dropDown,dropTitle,data}) => {
     let [drop,setDrop] = useState(dropDown)
     let [show,setShow] = useState(dropDown)
-    console.log(data)
   return (
     <div className="mb-10">
         <div>

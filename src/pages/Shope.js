@@ -1,27 +1,53 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Breadcrumb from '../component/layout/Breadcrumb'
 import Container from '../component/layout/Container'
 import Flex from '../component/layout/Flex'
 import LeftSidebar from '../component/layout/LeftSidebar'
 import Pagination from '../component/layout/Pagination'
-
+import {BsFilterCircleFill} from 'react-icons/bs'
+import {AiFillCloseCircle} from 'react-icons/ai'
 
 
 const Shope = () => {
-    let [showNumber,setShowNumber] = useState(12)
-   let handlePaginationchange =(e)=>{
+  let [show,setShow] = useState(false);
+  let showRef = useRef()
+  let [showNumber,setShowNumber] = useState(12)
+  let handlePaginationchange =(e)=>{
     setShowNumber(+e.target.value)
    }
+   useEffect(()=>{
+    function scrollWidth() {
+     if(window.innerWidth < 1024){
+       setShow(false)
+     }else(
+       setShow(true)
+     )
+    }
+    scrollWidth()
+
+
+},[])
+
 
   return (
     <div>
         <Container>
          <Breadcrumb />
-         <Flex className="flex gap-x-10">
-            <div className="w-[25%] ">
+        
+         <Flex className="flex gap-x-10 relative">
+              {show &&
+            <div className="w-full sm:w-[25%] absolute top-0 left-0 bg-[#fcfcfc] sm:static sm:bg-[#fff] z-50 p-5">
+              <>
+              <AiFillCloseCircle onClick={()=>setShow(!show)}className='text-xl cursor-pointer'/>
               <LeftSidebar/>
+              </>
             </div>
-            <div className="w-[75%] relative">  
+         }
+            <div className="w-full md:w-[75%] relative">  
+           <div className="absolute top-3 left-2 ">
+           <BsFilterCircleFill onClick={()=>setShow(!show)} className='inline-block md:hidden text-xl text-[#767676] cursor-pointer'/>
+
+           </div>
             <div className="flex flex-wrap gap-x-5 gap-y-4 md:gap-y-0  justify-end mb-5">
                  <div className="flex  gap-3 items-center font-dm font-normal text-base">
                         <label for="countries" class=" text-[#767676]"> Sort by:</label>
