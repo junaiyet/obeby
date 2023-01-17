@@ -4,7 +4,10 @@ import Flex from "./Flex";
 import List from "./List";
 import ListItem from "./ListItem";
 import Image from "./Image";
-
+import {RiFacebookFill} from 'react-icons/ri'
+import {FaLinkedinIn} from 'react-icons/fa'
+import {BsInstagram} from 'react-icons/bs'
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="mt-36 bg-[#F5F5F3] py-14">
@@ -112,6 +115,18 @@ const Footer = () => {
           </div>
           <div className="sm:w-[40%]">
             <Image imgsrc="assets/logo.png" />
+          </div>
+        </Flex>
+        <Flex className="sm:flex  items-center pt-8">
+          <div className="w-full sm:w-2/4">
+            <ul className="flex items-center sm:items-start gap-x-6">
+              <li><Link to="#"><RiFacebookFill/></Link></li>
+              <li><Link to="#"><FaLinkedinIn/></Link></li>
+              <li><Link to="#"><BsInstagram/></Link></li>
+            </ul>
+          </div>
+          <div className="w-full sm:w-2/4 mt-3 sm:mt-0 text-center sm:text-right">
+            <p className="font-dm font-normal text-base text-[#6D6D6D]">2020 Orebi Minimal eCommerce Figma Template by Adveits</p>
           </div>
         </Flex>
       </Container>
