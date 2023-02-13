@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 function ListItem({itemname,className,href}) {
   return (
     <li className={className}>
-      <Link to={href}>{itemname}</Link></li>
+      <NavLink to={href}>{itemname}</NavLink></li>
   )
 }
 

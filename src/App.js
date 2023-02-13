@@ -10,7 +10,7 @@ let router =  createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
      <Route index element={<Home/>}></Route>
-     <Route path="/shope" element={<Shope  />}></Route>
+     <Route path="/shop" element={<Shope  />}></Route>
      <Route path="/about" element={<About  />}></Route>
      <Route path="/contact" element={<Contact  />}></Route>
     </Route>

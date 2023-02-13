@@ -35,11 +35,11 @@ function Navber() {
        {
          show && 
         <List className="lg:flex justify-end gap-x-10 mt-5 lg:mt-0">
-         <ListItem className="font-dm text-sm font-bold hover:font-bold cursor-pointer my-2.5 lg:my-0"  itemname="Home"/>
-         <ListItem className="font-dm text-sm font-normal hover:font-bold cursor-pointer my-2.5 lg:my-0" itemname="Shop"/>
-         <ListItem className="font-dm text-sm font-normal hover:font-bold cursor-pointer my-2.5 lg:my-0" itemname="About"/>
-         <ListItem className="font-dm text-sm font-normal hover:font-bold cursor-pointer my-2.5 lg:my-0" itemname="Contact"/>
-         <ListItem className="font-dm text-sm font-normal hover:font-bold cursor-pointer my-2.5 lg:my-0" itemname="Journal"/>
+         <ListItem className="font-dm text-sm font-bold hover:font-bold cursor-pointer my-2.5 lg:my-0" href='/'  itemname="Home"/>
+         <ListItem className="font-dm text-sm font-normal hover:font-bold cursor-pointer my-2.5 lg:my-0" href='/shop' itemname="Shop"/>
+         <ListItem className="font-dm text-sm font-normal hover:font-bold cursor-pointer my-2.5 lg:my-0" href="/about" itemname="About"/>
+         <ListItem className="font-dm text-sm font-normal hover:font-bold cursor-pointer my-2.5 lg:my-0" href='/contact' itemname="Contact"/>
+         {/* <ListItem className="font-dm text-sm font-normal hover:font-bold cursor-pointer my-2.5 lg:my-0"  itemname="Journal"/> */}
         </List>
        }
  
