@@ -53,7 +53,7 @@ const SidebarContent = ({dropDown,dropTitle,data}) => {
  
         </>
         }
-        {drop == false && 
+        {drop === false && 
             <>
           {data.map((item,index)=>(
             item.subcategory ? (

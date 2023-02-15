@@ -17,7 +17,7 @@ const Shope = () => {
    }
    useEffect(()=>{
     function scrollWidth() {
-     if(window.innerWidth < 1024){
+     if(window.innerWidth < 667){
        setShow(false)
      }else(
        setShow(true)
@@ -36,9 +36,9 @@ const Shope = () => {
         
          <Flex className="flex gap-x-10 relative">
               {show &&
-            <div className="w-full sm:w-[25%] absolute top-0 left-0 bg-[#fcfcfc] sm:static sm:bg-[#fff] z-50 p-5">
+            <div className="w-full md:w-[25%] sm:w-[55%] absolute top-0 left-0 bg-[#fcfcfc] sm:static sm:bg-[#fff] z-50 p-5">
               <>
-              <AiFillCloseCircle onClick={()=>setShow(!show)}className='text-xl cursor-pointer'/>
+              <AiFillCloseCircle onClick={()=>setShow(!show)}className='text-xl cursor-pointer sm:hidden block '/>
               <LeftSidebar/>
               </>
             </div>
